@@ -41,7 +41,7 @@ If you have access to a pre-configured cluster, skip to [building and deploying 
 
 Running all experiments requires:
 * a cluster of 8 machines connected via an InfiniBand fabric,
-* Ubuntu 22.04 (different systems may work, but they have not been tested),
+* Ubuntu 20.04 (different systems may work, but they have not been tested),
 * all machines having the following ports open: 7000-7100, 11211, 18515, 9998.
 
 ### Deployment Dependencies
@@ -63,8 +63,8 @@ sudo apt install -y coreutils gawk python3 zip tmux gcc numactl libmemcached-dev
 
 The proper version of Mellanox OFED's InfiniBand drivers can be installed on the cluster machines via:
 ```sh
-wget http://www.mellanox.com/downloads/ofed/MLNX_OFED-5.8-5.1.1.2/MLNX_OFED_LINUX-5.8-5.1.1.2-ubuntu22.04-x86_64.tgz
-tar xf MLNX_OFED_LINUX-5.8-5.1.1.2-ubuntu22.04-x86_64.tgz
+wget http://www.mellanox.com/downloads/ofed/MLNX_OFED-5.3-1.0.0.1/MLNX_OFED_LINUX-5.3-1.0.0.1-ubuntu20.04-x86_64.tgz
+tar xf MLNX_OFED_LINUX-5.3-1.0.0.1-ubuntu20.04-x86_64.tgz
 sudo ./mlnxofedinstall
 ```
 
@@ -73,7 +73,7 @@ sudo ./mlnxofedinstall
 To build the evaluation binaries, you need the dependencies below.
 > *Note*: You can build and package the binaries in a cluster machine, the gateway or another machine. It is important, however, that you build the binaries in a machine with the same distro/version as the cluster machines, otherwise the binaries may not work. For example, you can use a docker container to build and package the binaries. Alternatively, you can use one of the machines in the cluster.
 
-Install the required dependencies on a vanilla Ubuntu 22.04 installation via:
+Install the required dependencies on a vanilla Ubuntu 20.04 installation via:
 ```sh
 sudo apt update
 sudo apt -y install \
