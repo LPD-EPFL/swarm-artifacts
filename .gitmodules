@@ -1,0 +1,3 @@
+[submodule "bin/swarm-kv"]
+	path = bin/swarm-kv
+	url = https://github.com/LPD-EPFL/swarm-kv
