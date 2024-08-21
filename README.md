@@ -19,7 +19,6 @@ By running the experiments, you should be able to reproduce the numbers shown in
 * **Figure 10**: TODO
 * **Figure 11**: TODO
 * **Figure 12**: TODO
-* **Table 3**: TODO
 
 ## Getting Started Instructions
 
@@ -152,71 +151,63 @@ During the kick-the-tires period, we invite you to run the scripts of [figure 5]
 #### Figure 5
 
 ```sh
-experiments/fig5.sh # run the experiment
+experiments/fig5-latency-cdf.sh # run the experiment
 ./gather-logs.sh # retrieve the logs from the workers to the gateway
-print-datapoints/fig5.py # print the data points
+print-datapoints/fig5-latency-cdf.py # print the data points
 ```
 
 #### Figure 6
 
 ```sh
-experiments/fig6.sh # run the experiment
+experiments/fig6-tput-latency.sh # run the experiment
 ./gather-logs.sh # retrieve the logs from the workers to the gateway
-print-datapoints/fig6.py # print the data points
+print-datapoints/fig6-tput-latency.py # print the data points
 ```
 
 #### Figure 7
 
 ```sh
-experiments/fig7.sh # run the experiment
+experiments/fig7-scaling-clients.sh # run the experiment
 ./gather-logs.sh # retrieve the logs from the workers to the gateway
-print-datapoints/fig7.py # print the data points
+print-datapoints/fig7-scaling-clients.py # print the data points
 ```
 
 #### Figure 8
 
 ```sh
-experiments/fig8.sh # run the experiment
+experiments/fig8-value-sizes.sh # run the experiment
 ./gather-logs.sh # retrieve the logs from the workers to the gateway
-print-datapoints/fig8.py # print the data points
+print-datapoints/fig8-value-sizes.py # print the data points
 ```
 
 #### Figure 9
 
 ```sh
-experiments/fig9.sh # run the experiment
+experiments/fig9-replication-factor.sh # run the experiment
 ./gather-logs.sh # retrieve the logs from the workers to the gateway
-print-datapoints/fig9.py # print the data points
+print-datapoints/fig9-replication-factor.py # print the data points
 ```
 
 #### Figure 10
 
 ```sh
-experiments/fig10.sh # run a shorter experiment that focuses on the key points
+experiments/fig10-failure.sh # run a shorter experiment that focuses on the key points
 ./gather-logs.sh # retrieve the logs from the workers to the gateway
-print-datapoints/fig10.py # print the data points
+print-datapoints/fig10-failure.py # print the data points
 ```
 
 #### Figure 11
 
 ```sh
-experiments/fig11.sh # run the experiment
+experiments/fig11-single-key.sh # run the experiment
 ./gather-logs.sh # retrieve the logs from the workers to the gateway
-print-datapoints/fig11.py # print the data points
+print-datapoints/fig11-single-key.py # print the data points
 ```
 
 #### Figure 12
 
 ```sh
-experiments/fig12.sh # run the experiment
+experiments/fig12-metadata-buffers.sh # run the experiment
 ./gather-logs.sh # retrieve the logs from the workers to the gateway
-print-datapoints/fig12.py # print the data points
-```
-
-#### Table 3
-
-```sh
-experiments/table1.sh # run the experiment
-./gather-logs.sh # retrieve the logs from the workers to the gateway
-print-datapoints/table1.py # print the data points
+print-datapoints/fig12-metadata-buffers.py # print the data points
 ```
