@@ -1,6 +1,7 @@
 # Overview
 
-SWARM is a shared disaggregated-memory data replication algorithm with 1 RTT reads and writes.
+SWARM is a wait-free replication protocol for shared data in disaggregated memory that provides 1-RTT reads and writes.
+SWARM-KV is a key-value store that leverages SWARM to offer 1-RTT GETs and UPDATEs.
 
 This repository contains the artifacts and the instructions needed to reproduce the experiments in our SOSP paper.
 More precisely, it contains:
@@ -11,19 +12,19 @@ More precisely, it contains:
 ## Claims
 
 By running the experiments, you should be able to reproduce the numbers shown in:
-* **Figure 5**: Latency CDFs of SWARM-KV, two other KVStores (DM-ABD and FUSEE) and raw disaggregated-memory.
-* **Figure 6**: Per-client throughput-latency graph of SWARM-KV and DM-ABD.
-* **Figure 7**: TODO
-* **Figure 8**: TODO
-* **Figure 9**: TODO
-* **Figure 10**: TODO
-* **Figure 11**: TODO
-* **Figure 12**: TODO
+* **Figure 5**: Latency CDFs for SWARM-KV, two other key-value stores (DM-ABD and FUSEE), and raw disaggregated memory.
+* **Figure 6**: Per-client throughput-latency graphs for SWARM-KV and DM-ABD.
+* **Figure 7**: Throughput and latency of SWARM-KV and DM-ABD for varying numbers of clients and parallel operations.
+* **Figure 8**: Throughput and latency of SWARM-KV for YCSB workloads A and B, and varying value sizes; compared with a variant of SWARM-KV without in-place updates.
+* **Figure 9**: Median latency and per-client throughput of SWARM-KV and DM-ABD for different numbers of replicas.
+* **Figure 10**: Latency and throughput of a SWARM-KV client before and after the failure of a memory node.
+* **Figure 11**: Latency CDFs for SWARM-KV and DM-ABD with a single key-value pair under stress and 16 clients.
+* **Figure 12**: Latency CDFs for SWARM-KV for 64 clients and a varying number of metadata buffers.
 
 ## Getting Started Instructions
 
-Assuming you have access to a pre-configured cluster, you will be able to run a first experiment
-that measures the latency CDFs of GETs and UPDATEs of SWARM-KV, two other KVStores and raw disaggregated-memory (figure 5) in less than 30 minutes by:
+Assuming you have access to a pre-configured cluster, you will be able to run a first experiment---
+that measures the latency of GETs and UPDATEs of SWARM-KV, two other key-value stores, and raw disaggregated memory (figure 5)---in less than 30 minutes by:
 1. Connecting to the pre-configured cluster's gateway,
 2. [Building and deploying the evaluation binaries](#Building-and-Deploying-the-Binaries),
 3. [Running the scripts for figure 5](#Running-Experiments).
@@ -39,7 +40,7 @@ If you have access to a pre-configured cluster, skip to [building and deploying 
 
 Running all experiments requires:
 * a cluster of 8 machines connected via an InfiniBand fabric,
-* Ubuntu 20.04 (different systems may work, but they have not been tested),
+* Ubuntu 22.04 (different systems may work, but they have not been tested),
 * all machines having the following ports open: 7000-7100, 11211, 18515, 9998.
 
 ### Deployment Dependencies
@@ -61,8 +62,8 @@ sudo apt install -y coreutils gawk python3 zip tmux gcc numactl libmemcached-dev
 
 The proper version of Mellanox OFED's InfiniBand drivers can be installed on the cluster machines via:
 ```sh
-wget http://www.mellanox.com/downloads/ofed/MLNX_OFED-5.3-1.0.0.1/MLNX_OFED_LINUX-5.3-1.0.0.1-ubuntu20.04-x86_64.tgz
-tar xf MLNX_OFED_LINUX-5.3-1.0.0.1-ubuntu20.04-x86_64.tgz
+wget http://www.mellanox.com/downloads/ofed/MLNX_OFED-5.8-5.1.1.2/MLNX_OFED_LINUX-5.8-5.1.1.2-ubuntu22.04-x86_64.tgz
+tar xf MLNX_OFED_LINUX-5.8-5.1.1.2-ubuntu22.04-x86_64.tgz
 sudo ./mlnxofedinstall
 ```
 
@@ -71,7 +72,7 @@ sudo ./mlnxofedinstall
 To build the evaluation binaries, you need the dependencies below.
 > *Note*: You can build and package the binaries in a cluster machine, the gateway or another machine. It is important, however, that you build the binaries in a machine with the same distro/version as the cluster machines, otherwise the binaries may not work. For example, you can use a docker container to build and package the binaries. Alternatively, you can use one of the machines in the cluster.
 
-Install the required dependencies on a vanilla Ubuntu 20.04 installation via:
+Install the required dependencies on a vanilla Ubuntu 22.04 installation via:
 ```sh
 sudo apt update
 sudo apt -y install \
@@ -87,7 +88,7 @@ pip3 install --upgrade "conan>=1.63.0,<2.0.0"
 
 Assuming all the machines in your cluster have the same configuration, you need to:
 * build all the necessary binaries, for example in a deployment machine,
-* package them and deploy them in all 8 machines.
+* package them and deploy them on all 8 machines.
 
 ### Recursively Cloning this Repository
 
