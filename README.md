@@ -24,8 +24,7 @@ By running the experiments, you should be able to reproduce the numbers shown in
 
 ## Getting Started Instructions
 
-Assuming you have access to a pre-configured cluster, you will be able to run a first experiment---
-that measures the latency of GETs and UPDATEs of SWARM-KV, two other key-value stores, and raw disaggregated memory (figure 5)---in less than 30 minutes by:
+Assuming you have access to a pre-configured cluster, you will be able to run a first experiment---that measures the latency of GETs and UPDATEs of SWARM-KV, two other key-value stores, and raw disaggregated memory (figure 5)---in less than 30 minutes by:
 1. Connecting to the pre-configured cluster's gateway,
 2. [Building and deploying the evaluation binaries](#Building-and-Deploying-the-Binaries),
 3. [Running the scripts for figure 5](#Running-Experiments).
