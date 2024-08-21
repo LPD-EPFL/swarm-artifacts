@@ -140,7 +140,7 @@ On our pre-configured cluster, this can be done via:
 ./send-deployment.sh
 ```
 
-As a sanity check, the `~/swarm-artifacts` directory should contain the `bin`, `experiments`, `scripts`, `workloads` and `YCSB` subfolders.
+As a sanity check, the `~/swarm-artifacts` directory of each worker should contain the `bin`, `experiments`, `scripts`, `workloads` and `YCSB` subfolders.
 
 ## Running Experiments
 
