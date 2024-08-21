@@ -1,7 +1,8 @@
 # Overview
 
 SWARM is a wait-free replication protocol for shared data in disaggregated memory that provides 1-RTT reads and writes.
-SWARM-KV is a key-value store that leverages SWARM to offer 1-RTT GETs and UPDATEs.
+
+SWARM-KV is an RDMA-based disaggregated key-value store that leverages SWARM to offer 1-RTT GETs and UPDATEs.
 
 This repository contains the artifacts and the instructions needed to reproduce the experiments in our SOSP paper.
 More precisely, it contains:
