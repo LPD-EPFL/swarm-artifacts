@@ -1,9 +1,9 @@
 #!/bin/bash
 set -e
 
-SCRIPT_DIR="$( realpath -sm  "$( dirname "${BASH_SOURCE[0]}" )")"
+BASE_DIR="$( realpath -sm  "$( dirname "${BASH_SOURCE[0]}" )")"
 
-cd "$SCRIPT_DIR"
+cd "$BASE_DIR"
 
 rm -rf deployment.zip
 zip -r deployment.zip workloads/
