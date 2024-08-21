@@ -1,6 +1,8 @@
 # Overview
 
-SWARM is a shared disaggregated-memory data replication algorithm with 1 RTT reads and writes.
+SWARM is a wait-free replication protocol for shared data in disaggregated memory that provides 1-RTT reads and writes.
+
+SWARM-KV is an RDMA-based disaggregated key-value store that leverages SWARM to offer 1-RTT GETs and UPDATEs.
 
 This repository contains the artifacts and the instructions needed to reproduce the experiments in our SOSP paper.
 More precisely, it contains:
@@ -11,19 +13,19 @@ More precisely, it contains:
 ## Claims
 
 By running the experiments, you should be able to reproduce the numbers shown in:
-* **Figure 5**: Latency CDFs of SWARM-KV, two other KVStores (DM-ABD and FUSEE) and raw disaggregated-memory.
-* **Figure 6**: Per-client throughput-latency graph of SWARM-KV and DM-ABD.
-* **Figure 7**: TODO
-* **Figure 8**: TODO
-* **Figure 9**: TODO
-* **Figure 10**: TODO
-* **Figure 11**: TODO
-* **Figure 12**: TODO
+* **Figure 5**: Latency CDFs for SWARM-KV, two other key-value stores (DM-ABD and FUSEE), and raw disaggregated memory.
+* **Figure 6**: Per-client throughput-latency graphs for SWARM-KV and DM-ABD.
+* **Figure 7**: Throughput and latency of SWARM-KV and DM-ABD for varying numbers of clients and parallel operations.
+* **Figure 8**: Throughput and latency of SWARM-KV for YCSB workloads A and B, and varying value sizes; compared with a variant of SWARM-KV without in-place updates.
+* **Figure 9**: Median latency and per-client throughput of SWARM-KV and DM-ABD for different numbers of replicas.
+* **Figure 10**: Latency and throughput of a SWARM-KV client before and after the failure of a memory node.
+* **Figure 11**: Latency CDFs for SWARM-KV and DM-ABD with a single key-value pair under stress and 16 clients.
+* **Figure 12**: Latency CDFs for SWARM-KV for 64 clients and a varying number of metadata buffers.
 
 ## Getting Started Instructions
 
-Assuming you have access to a pre-configured cluster, you will be able to run a first experiment
-that measures the latency CDFs of GETs and UPDATEs of SWARM-KV, two other KVStores and raw disaggregated-memory (figure 5) in less than 30 minutes by:
+Assuming you have access to a pre-configured cluster, you will be able to run a first experiment---
+that measures the latency of GETs and UPDATEs of SWARM-KV, two other key-value stores, and raw disaggregated memory (figure 5)---in less than 30 minutes by:
 1. Connecting to the pre-configured cluster's gateway,
 2. [Building and deploying the evaluation binaries](#Building-and-Deploying-the-Binaries),
 3. [Running the scripts for figure 5](#Running-Experiments).
@@ -87,7 +89,7 @@ pip3 install --upgrade "conan>=1.63.0,<2.0.0"
 
 Assuming all the machines in your cluster have the same configuration, you need to:
 * build all the necessary binaries, for example in a deployment machine,
-* package them and deploy them in all 8 machines.
+* package them and deploy them on all 8 machines.
 
 ### Recursively Cloning this Repository
 
