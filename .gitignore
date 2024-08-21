@@ -1,0 +1,6 @@
+*.zip
+__pycache__/
+logs/*/
+ycsb-0.12.0.tar.gz
+ycsb-0.12.0/
+YCSB/
