@@ -41,7 +41,7 @@ for retry in $(seq 1 15); do
   done
   echo " ✓"
 
-  "$SCRIPT_DIR"/wait-till-completion.sh machine$FIRST_SERVER server1 240 || continue
+  "$SCRIPT_DIR"/wait-till-completion.sh machine$FIRST_SERVER server1 120 || continue
 
   "$SCRIPT_DIR"/kill-all-tmux.sh
   exit 0
