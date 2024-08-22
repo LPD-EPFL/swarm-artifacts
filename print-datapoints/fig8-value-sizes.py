@@ -25,4 +25,4 @@ for workload in ["workload-A", "workload-B"]:
                 updavg += data['UPDATE']['psum'] / (4 * data['UPDATE']['pcount'])
                 tputavg += data['local tput']
             # opavg = ((getavg + updavg) / 2) if workload == "workload-A" else (getavg * 0.95 + updavg * 0.05)
-            print(f'  - values of {vsize}B -> GETs average latency: {round(getavg, 3)}μs, UPDATEs average latency: {round(updavg, 3)}μs, throuput: {round(tputavg / 1000, 2)}Mops')
+            print(f'  - values of {vsize}B -> GETs average latency: {round(getavg, 3)}μs, UPDATEs average latency: {round(updavg, 3)}μs, throughput: {round(tputavg / 1000, 2)}Mops')
