@@ -11,7 +11,7 @@ LIMIT=$3
 echo -n "Running"
 for i in $(seq 1 $LIMIT); do
   echo -n "."
-  sleep .5
+  sleep .9
   "$SCRIPT_DIR"/remote-invoker-completed.sh $1 $2
   if [ $? -eq 0 ]; then
     echo "  ✓"

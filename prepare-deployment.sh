@@ -9,6 +9,6 @@ rm -rf deployment.zip
 zip -r deployment.zip workloads/
 zip -r deployment.zip scripts/
 zip -r deployment.zip experiments/
-zip -r deployment.zip bin/bin.zip
-zip -r deployment.zip logs/placeholder.txt
-zip -r deployment.zip ycsb-0.12.0.tar.gz
+zip deployment.zip logs/placeholder.txt
+zip -0 deployment.zip bin/bin.zip
+zip -0 deployment.zip ycsb-0.12.0.tar.gz
