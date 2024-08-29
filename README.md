@@ -118,7 +118,7 @@ Download YCSB binaries via:
 ./download-ycsb.sh
 ```
 
-This should download `ycsb-0.12.0.tar.gz` in the current directory.
+This should download `ycsb-0.12.0.tar.gz` in the current directory, and print `ycsb-0.12.0.tar.gz: OK` if the checksum matches.
 
 ### Deploying the Binaries
 
