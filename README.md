@@ -138,7 +138,7 @@ Then, for each cluster server, you will need to:
 - rename the `swarm-artifacts/ycsb-0.12.0` directory to `swarm-artifacts/YCSB`,
 - unzip `swarm-artifacts/bin/bin.zip` in the `swarm-artifacts/bin` directory.
 
-On our pre-configured cluster, this can be done via a single:
+On our pre-configured cluster, this can be done from the gateway via a single:
 ```sh
 ./send-deployment.sh
 ```
