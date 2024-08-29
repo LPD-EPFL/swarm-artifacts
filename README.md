@@ -98,6 +98,8 @@ git clone https://github.com/LPD-EPFL/swarm-artifacts.git --recurse-submodules
 cd swarm-artifacts
 ```
 
+Make sure your working path has no spaces or special characters (e.g. `/home/user/mydir-1/swarm-artifacts` is fine).
+
 If you are not using our pre-configured cluster, set the proper FQDN of the cluster's machines in `scripts/config.sh`.
 
 ### Building the Binaries
@@ -130,17 +132,21 @@ Zip the binaries and prepare their deployment via:
 
 To deploy, you will need to:
 - send `deployment.zip` to all the cluster's servers,
-- unzip `deployment.zip` in the `~/swarm-artifacts` directory,
-- untar `~/swarm-artifacts/ycsb-0.12.0.tar.gz` in the `~/swarm-artifacts` directory,
-- rename the `~/swarm-artifacts/ycsb-0.12.0` directory to `~/swarm-artifacts/YCSB`,
-- unzip `~/swarm-artifacts/bin/bin.zip` in the `~/swarm-artifacts/bin` directory.
+- unzip `deployment.zip` in a `swarm-artifacts` directory,
+- untar `swarm-artifacts/ycsb-0.12.0.tar.gz` in the same `swarm-artifacts` directory,
+- rename the `swarm-artifacts/ycsb-0.12.0` directory to `swarm-artifacts/YCSB`,
+- unzip `swarm-artifacts/bin/bin.zip` in the `swarm-artifacts/bin` directory.
 
 On our pre-configured cluster, this can be done via:
 ```sh
 ./send-deployment.sh
 ```
 
-As a sanity check, the `~/swarm-artifacts` directory of each worker should contain the `bin`, `experiments`, `scripts`, `workloads` and `YCSB` subfolders.
+If anything goes wrong, or you want to clean workers, you can undo the deployment via `./undo-deployment.sh`. This will also delete remote logs.
+
+Once the deployment is done, do not move the `swarm-artifacts` directory.
+
+As a sanity check, the `swarm-artifact` directory of each worker should contain the `bin`, `experiments`, `scripts`, `workloads` and `YCSB` subdirectories.
 
 ## Running Experiments
 
