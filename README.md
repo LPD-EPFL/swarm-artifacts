@@ -130,14 +130,15 @@ Zip the binaries and prepare their deployment via:
 ./prepare-deployment.sh # generates deployment.zip
 ```
 
-To deploy, you will need to:
-- send `deployment.zip` to all the cluster's servers,
-- unzip `deployment.zip` in a `swarm-artifacts` directory,
-- untar `swarm-artifacts/ycsb-0.12.0.tar.gz` in the same `swarm-artifacts` directory,
+Then, for each cluster server, you will need to:
+- create a `swarm-artifacts` directory with the same path as the one on the gateway,
+- send `deployment.zip` to said directory,
+- unzip `deployment.zip` in said directory,
+- untar `swarm-artifacts/ycsb-0.12.0.tar.gz` in said directory,
 - rename the `swarm-artifacts/ycsb-0.12.0` directory to `swarm-artifacts/YCSB`,
 - unzip `swarm-artifacts/bin/bin.zip` in the `swarm-artifacts/bin` directory.
 
-On our pre-configured cluster, this can be done via:
+On our pre-configured cluster, this can be done via a single:
 ```sh
 ./send-deployment.sh
 ```
