@@ -3,7 +3,7 @@
 import os
 from logparser import parse
 
-for workload in ["workload-B", "workload-A"]:
+for workload in ["workload-A", "workload-B"]:
     print(f'{workload}:')
 
     for s in ['SWARM-KV','DM-ABD']:
