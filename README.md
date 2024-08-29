@@ -156,6 +156,9 @@ As a sanity check, the `swarm-artifact` directory of each worker should contain 
 Once the binaries are deployed, you can reproduce the results presented in our paper from the gateway by running the following scripts.
 During the kick-the-tires period, we invite you to run the scripts of [figure 5](#figure-5) as a sanity check.
 
+> Note: Due to differences in hardware and software configuration, you can expect the pre-configured cluster we provide to achieve up to both 10% higher latency and 10% lower throughput than the setup used in the accepted version of the paper.
+> However, such degradations should not affect the behaviors and relative comparisons presented in the paper.
+
 #### Figure 5
 
 ```sh
