@@ -41,5 +41,5 @@ for s in ['SWARM-KV','DM-ABD']:
         print(f'    - UPDATEs average latency: {round(updavg, 3)}μs')
         print(f'    - UPDATEs 1%-tile latency: {round(upd1, 3)}μs')
         print(f'    - UPDATEs 99%-tile latency: {round(upd99, 3)}μs')
-        print(f'    - throughput: {round(tputavg / 1000, 2)}Mops')
+        print(f'    - throughput: {round(tputavg, 1)}kops')
 
