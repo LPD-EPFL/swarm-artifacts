@@ -13,7 +13,7 @@ path = os.path.join('logs',
     f'fig10-failure/{workload}/crash/client1.txt',
 )
 data = parse(path)
-grain = 200
+grain = 20
 start_ms = -1000
 end_ms = -11000
 
@@ -27,7 +27,7 @@ for op in ['GET','UPDATE']:
                 data['b-midpoints'][i:i+opgrain]
             ) / opgrain - deathpoint
         ) / 1e6
-        for i in range(0,l,grain)
+        for i in range(0,l)
     ]
     ys = [
         sum(
@@ -35,14 +35,14 @@ for op in ['GET','UPDATE']:
         ) / (1000 * sum(
             data[f'b-{op}-counts'][i:i+opgrain]
         ))
-        for i in range(0,l,grain)
+        for i in range(0,l)
     ]
     for x,y in zip(xs, ys):
         if x < -1000:
             continue
         if x > 11000:
             break
-        print(f' at {int(round(x))}ms -> {op}s latency: {round(y,2)}μs')
+        print(f' at {round(x,1)}ms -> {op}s latency: {round(y,2)}μs')
 
 
 print(f'throughput:')
@@ -54,7 +54,7 @@ xs = [
             data['b-midpoints'][i:i+grain]
         ) / grain - deathpoint
     ) / 1e6
-    for i in range(0,l,grain)
+    for i in range(0,l)
 ]
 ys = [
     1000000 * sum(
@@ -62,13 +62,11 @@ ys = [
     ) / sum(
         data[f'b-interval-sums'][i:i+grain]
     )
-    for i in range(0,l,grain)
+    for i in range(0,l)
 ]
 for x,y in zip(xs, ys):
     if x < -1000:
         continue
     if x > 11000:
         break
-    print(f' at {int(round(x))}ms -> throughput: {round(y,1)}kops')
-
-print(f'Note: to make the output human-readable and reduce noise, this script groups datapoints by batch of grain={grain}. The graph uses different grains (grain=20 for the zoomed out version and grain=1 for the zoomed in version). If you want to print the datapoints for different grains, check the print-datapoints/extra directory.')
+    print(f' at {round(x,1)}ms -> throughput: {round(y,1)}kops')

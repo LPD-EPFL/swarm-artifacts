@@ -13,7 +13,7 @@ path = os.path.join('logs',
     f'fig10-failure/{workload}/crash/client1.txt',
 )
 data = parse(path)
-grain = 200
+grain = 1
 start_ms = -1000
 end_ms = -11000
 
@@ -42,7 +42,7 @@ for op in ['GET','UPDATE']:
             continue
         if x > 11000:
             break
-        print(f' at {int(round(x))}ms -> {op}s latency: {round(y,2)}μs')
+        print(f' at {round(x,1)}ms -> {op}s latency: {round(y,2)}μs')
 
 
 print(f'throughput:')
@@ -69,6 +69,4 @@ for x,y in zip(xs, ys):
         continue
     if x > 11000:
         break
-    print(f' at {int(round(x))}ms -> throughput: {round(y,1)}kops')
-
-print(f'Note: to make the output human-readable and reduce noise, this script groups datapoints by batch of grain={grain}. The graph uses different grains (grain=20 for the zoomed out version and grain=1 for the zoomed in version). If you want to print the datapoints for different grains, check the print-datapoints/extra directory.')
+    print(f' at {round(x,1)}ms -> throughput: {round(y,1)}kops')

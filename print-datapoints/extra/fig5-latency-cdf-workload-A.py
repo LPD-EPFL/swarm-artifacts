@@ -5,7 +5,7 @@ from logparser import parse
 
 ptiles = [0.1] + list(range(1,100)) + [99.9]
 
-for workload in ["workload-B"]:
+for workload in ["workload-A"]:
     print(f'{workload}:')
 
     for op in ['GET', 'UPDATE']:
@@ -21,4 +21,3 @@ for workload in ["workload-B"]:
 
             for ptile in ptiles:
                 print(f'    - {ptile}%: {data[ptile]}μs')
-print("This is for workload-B as shown in the figure. If you want to print the datapoints for workload-A, check the print-datapoints/extra directory.")

@@ -5,8 +5,8 @@ from logparser import parse
 
 ptiles = [0.1] + list(range(1,100)) + [99.9]
 
-workload = "workload-B"
-for workload in ["workload-A", "workload-B"]:
+# workload = "workload-B"
+for workload in ["workload-B"]:
     print(f'{workload}:')
     for op in ['GET', 'UPDATE']:
         print(f'- {op}s:')
@@ -22,4 +22,4 @@ for workload in ["workload-A", "workload-B"]:
 
             for ptile in ptiles:
                 print(f'    - {ptile}%: {data[ptile]}μs')
-print("Note that the graph only shows the experiment on workload-B")
+print("This is for workload-B as shown in the figure. If you want to print the datapoints for workload-A, check the print-datapoints/extra directory.")
