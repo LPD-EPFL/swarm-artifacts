@@ -53,6 +53,15 @@ The gateway machine requires the following depencencies installed to be able to 
 sudo apt install -y coreutils gawk python3 zip tmux
 ```
 
+**Optionnally**, if you want to generate the plots from the datapoints, the gateway also requires the following dependencies:
+```sh
+sudo apt install python3-packaging fonts-linuxlibertine
+fc-cache -f -v
+rm ~/.cache/matplotlib -rf
+pip3 install --upgrade pip
+pip3 install --upgrade importlib_resources matplotlib
+```
+
 #### Cluster Machine Dependencies
 
 The cluster machines, assuming they are already setup for InfiniBand+RDMA, require the following dependencies to be able to execute the binaries:
@@ -165,6 +174,7 @@ During the kick-the-tires period, we invite you to run the scripts of [figure 5]
 experiments/fig5-latency-cdf.sh # run the experiment
 ./gather-logs.sh # retrieve the logs from the workers to the gateway
 print-datapoints/fig5-latency-cdf.py # print the data points
+plot-datapoints/fig5-latency-cdf.py # plot as pdf in output-plots/
 ```
 
 #### Figure 6
@@ -173,6 +183,7 @@ print-datapoints/fig5-latency-cdf.py # print the data points
 experiments/fig6-tput-latency.sh # run the experiment
 ./gather-logs.sh # retrieve the logs from the workers to the gateway
 print-datapoints/fig6-tput-latency.py # print the data points
+plot-datapoints/fig6-tput-latency.py # plot as pdf in output-plots/
 ```
 
 #### Figure 7
@@ -181,6 +192,7 @@ print-datapoints/fig6-tput-latency.py # print the data points
 experiments/fig7-scaling-clients.sh # run the experiment
 ./gather-logs.sh # retrieve the logs from the workers to the gateway
 print-datapoints/fig7-scaling-clients.py # print the data points
+plot-datapoints/fig7-scaling-clients.py # plot as pdf in output-plots/
 ```
 
 #### Figure 8
@@ -189,6 +201,7 @@ print-datapoints/fig7-scaling-clients.py # print the data points
 experiments/fig8-value-sizes.sh # run the experiment
 ./gather-logs.sh # retrieve the logs from the workers to the gateway
 print-datapoints/fig8-value-sizes.py # print the data points
+plot-datapoints/fig8-value-sizes.py # plot as pdf in output-plots/
 ```
 
 #### Figure 9
@@ -197,6 +210,7 @@ print-datapoints/fig8-value-sizes.py # print the data points
 experiments/fig9-replication-factor.sh # run the experiment
 ./gather-logs.sh # retrieve the logs from the workers to the gateway
 print-datapoints/fig9-replication-factor.py # print the data points
+plot-datapoints/fig9-replication-factor.py # plot as pdf in output-plots/
 ```
 
 #### Figure 10
@@ -205,6 +219,7 @@ print-datapoints/fig9-replication-factor.py # print the data points
 experiments/fig10-failure.sh # run a shorter experiment that focuses on the key points
 ./gather-logs.sh # retrieve the logs from the workers to the gateway
 print-datapoints/fig10-failure.py # print the data points
+plot-datapoints/fig10-failure.py # plot as pdf in output-plots/
 ```
 
 #### Figure 11
@@ -213,6 +228,7 @@ print-datapoints/fig10-failure.py # print the data points
 experiments/fig11-single-key.sh # run the experiment
 ./gather-logs.sh # retrieve the logs from the workers to the gateway
 print-datapoints/fig11-single-key.py # print the data points
+plot-datapoints/fig11-single-key.py # plot as pdf in output-plots/
 ```
 
 #### Figure 12
@@ -221,4 +237,5 @@ print-datapoints/fig11-single-key.py # print the data points
 experiments/fig12-metadata-buffers.sh # run the experiment
 ./gather-logs.sh # retrieve the logs from the workers to the gateway
 print-datapoints/fig12-metadata-buffers.py # print the data points
+plot-datapoints/fig12-metadata-buffers.py # plot as pdf in output-plots/
 ```
