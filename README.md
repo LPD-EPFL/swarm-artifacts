@@ -239,3 +239,7 @@ experiments/fig12-metadata-buffers.sh # run the experiment
 print-datapoints/fig12-metadata-buffers.py # print the data points
 plot-datapoints/fig12-metadata-buffers.py # plot as pdf in output-plots/
 ```
+
+# Navigating the code
+
+How to navigate the code is described in the [README of the swarm-kv repository](https://github.com/LPD-EPFL/swarm-kv?tab=readme-ov-file#navigating-the-code).
