@@ -168,6 +168,8 @@ During the kick-the-tires period, we invite you to run the scripts of [figure 5]
 > Note: Due to differences in hardware and software configuration, you can expect the pre-configured cluster we provide to achieve up to both 10% higher latency and 10% lower throughput than the setup used in the accepted version of the paper.
 > However, such degradations should not affect the behaviors and relative comparisons presented in the paper.
 
+Each experiment takes roughly takes ~15-30 minutes to run.
+
 #### Figure 5
 
 ```sh
