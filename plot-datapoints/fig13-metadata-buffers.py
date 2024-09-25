@@ -80,7 +80,7 @@ for workload in ['B']:
     for subplot, op in zip(subplots, ops):
             for i, s in enumerate(schemes):
                     path = os.path.join('logs',
-                        f'fig12-metadata-buffers/workload-{workload}/64clients/{s}buffers/client1.txt',
+                        f'fig13-metadata-buffers/workload-{workload}/64clients/{s}buffers/client1.txt',
                     )
                     data = parse(path)[op]
                     xs = []
@@ -136,4 +136,4 @@ for workload in ['B']:
 
     # print(leg.get_bbox_to_anchor())
 
-    plt.savefig(f'output-plots/fig12-metadata-buffers.pdf', format='pdf', bbox_inches = 'tight', pad_inches=0.01)
+    plt.savefig(f'output-plots/fig13-metadata-buffers.pdf', format='pdf', bbox_inches = 'tight', pad_inches=0.01)

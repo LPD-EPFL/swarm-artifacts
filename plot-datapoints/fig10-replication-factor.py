@@ -86,7 +86,7 @@ for j, rep_factor in enumerate(replication_factors):
             # print(f'{workload}/a{a}/{s}-m{rep_factor}: ', end="")
             for c in range(1,5):
                 path = os.path.join("logs",
-                    f'fig9-replication-factor/workload-{workload}/{s}/{rep_factor}replicas/client{c}.txt',
+                    f'fig10-replication-factor/workload-{workload}/{s}/{rep_factor}replicas/client{c}.txt',
                 )
                 # print(path)
                 data = parse(path)
@@ -196,4 +196,4 @@ leg = fig.legend(handles=legends2, bbox_to_anchor=(0.20,.98,0.60,0.015),
 
 # print(leg.get_bbox_to_anchor())
 
-plt.savefig("output-plots/fig9-replication-factor.pdf", format='pdf', bbox_inches = 'tight', pad_inches=0.01)
+plt.savefig("output-plots/fig10-replication-factor.pdf", format='pdf', bbox_inches = 'tight', pad_inches=0.01)

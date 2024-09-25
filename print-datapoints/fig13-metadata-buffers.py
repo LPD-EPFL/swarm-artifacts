@@ -16,7 +16,7 @@ for workload in ["workload-B"]:
             print(f'  - Latency percentiles of {op}s with {bufs} buffers:')
 
             path = os.path.join('logs',
-                f'fig12-metadata-buffers/{workload}/64clients/{bufs}buffers/client1.txt',
+                f'fig13-metadata-buffers/{workload}/64clients/{bufs}buffers/client1.txt',
             )
             data = parse(path)[op]
 

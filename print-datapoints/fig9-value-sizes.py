@@ -18,7 +18,7 @@ for workload in ["workload-A", "workload-B"]:
             tputavg = 0
             for c in range(1, 5):
                 path = os.path.join('logs',
-                    f'fig8-value-sizes/{workload}/SWARM-KV/{s}/values-of-{vsize}B/client{c}.txt',
+                    f'fig9-value-sizes/{workload}/SWARM-KV/{s}/values-of-{vsize}B/client{c}.txt',
                 )
                 data = parse(path)
                 getavg += data['GET']['psum'] / (4 * data['GET']['pcount'])

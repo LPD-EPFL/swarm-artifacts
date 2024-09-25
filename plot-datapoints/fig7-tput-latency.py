@@ -80,10 +80,10 @@ for subplot, app in zip(subplots, apps):
                 getavg = 0
                 updavg = 0
                 tputavg = 0
-                # print(f'fig6-tput-latency/workload-{apps[app]}/{s}/{a}parallelOps/client*.txt')
+                # print(f'fig7-tput-latency/workload-{apps[app]}/{s}/{a}parallelOps/client*.txt')
                 for c in range(1,5):
                     path = os.path.join("logs",
-                        f'fig6-tput-latency/workload-{apps[app]}/{s}/{a}parallelOps/client{c}.txt',
+                        f'fig7-tput-latency/workload-{apps[app]}/{s}/{a}parallelOps/client{c}.txt',
                     )
                     data = parse(path)
                     getavg += data['GET']['psum'] / (4 * data['GET']['pcount'])
@@ -146,4 +146,4 @@ leg = fig.legend(handles=legends, bbox_to_anchor=(0.20,1.005,0.60,0.015),
 
 # print(leg.get_bbox_to_anchor())
 
-plt.savefig("output-plots/fig6-tput-latency.pdf", format='pdf', bbox_inches = 'tight', pad_inches=0.01)
+plt.savefig("output-plots/fig7-tput-latency.pdf", format='pdf', bbox_inches = 'tight', pad_inches=0.01)

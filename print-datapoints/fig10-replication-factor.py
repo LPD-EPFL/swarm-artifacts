@@ -22,7 +22,7 @@ for s in ['SWARM-KV','DM-ABD']:
         
         for c in range(1,5):
             path = os.path.join("logs",
-                f'fig9-replication-factor/{workload}/{s}/{replicas}replicas/client{c}.txt',
+                f'fig10-replication-factor/{workload}/{s}/{replicas}replicas/client{c}.txt',
             )
             data = parse(path)
             getavg += data['GET']['psum'] / (4 * data['GET']['pcount'])

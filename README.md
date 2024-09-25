@@ -182,64 +182,73 @@ plot-datapoints/fig5-latency-cdf.py # plot as pdf in output-plots/
 #### Figure 6
 
 ```sh
-experiments/fig6-tput-latency.sh # run the experiment
+experiments/fig6-limited-cache.sh # run the experiment
 ./gather-logs.sh # retrieve the logs from the workers to the gateway
-print-datapoints/fig6-tput-latency.py # print the data points
-plot-datapoints/fig6-tput-latency.py # plot as pdf in output-plots/
+print-datapoints/fig6-limited-cache.py # print the data points
+plot-datapoints/fig6-limited-cache.py # plot as pdf in output-plots/
 ```
 
 #### Figure 7
 
 ```sh
-experiments/fig7-scaling-clients.sh # run the experiment
+experiments/fig7-tput-latency.sh # run the experiment
 ./gather-logs.sh # retrieve the logs from the workers to the gateway
-print-datapoints/fig7-scaling-clients.py # print the data points
-plot-datapoints/fig7-scaling-clients.py # plot as pdf in output-plots/
+print-datapoints/fig7-tput-latency.py # print the data points
+plot-datapoints/fig7-tput-latency.py # plot as pdf in output-plots/
 ```
 
 #### Figure 8
 
 ```sh
-experiments/fig8-value-sizes.sh # run the experiment
+experiments/fig8-scaling-clients.sh # run the experiment
 ./gather-logs.sh # retrieve the logs from the workers to the gateway
-print-datapoints/fig8-value-sizes.py # print the data points
-plot-datapoints/fig8-value-sizes.py # plot as pdf in output-plots/
+print-datapoints/fig8-scaling-clients.py # print the data points
+plot-datapoints/fig8-scaling-clients.py # plot as pdf in output-plots/
 ```
 
 #### Figure 9
 
 ```sh
-experiments/fig9-replication-factor.sh # run the experiment
+experiments/fig9-value-sizes.sh # run the experiment
 ./gather-logs.sh # retrieve the logs from the workers to the gateway
-print-datapoints/fig9-replication-factor.py # print the data points
-plot-datapoints/fig9-replication-factor.py # plot as pdf in output-plots/
+print-datapoints/fig9-value-sizes.py # print the data points
+plot-datapoints/fig9-value-sizes.py # plot as pdf in output-plots/
 ```
 
 #### Figure 10
 
 ```sh
-experiments/fig10-failure.sh # run a shorter experiment that focuses on the key points
+experiments/fig10-replication-factor.sh # run the experiment
 ./gather-logs.sh # retrieve the logs from the workers to the gateway
-print-datapoints/fig10-failure.py # print the data points
-plot-datapoints/fig10-failure.py # plot as pdf in output-plots/
+print-datapoints/fig10-replication-factor.py # print the data points
+plot-datapoints/fig10-replication-factor.py # plot as pdf in output-plots/
 ```
 
 #### Figure 11
 
 ```sh
-experiments/fig11-single-key.sh # run the experiment
+experiments/fig11-failure.sh # run a shorter experiment that focuses on the key points
 ./gather-logs.sh # retrieve the logs from the workers to the gateway
-print-datapoints/fig11-single-key.py # print the data points
-plot-datapoints/fig11-single-key.py # plot as pdf in output-plots/
+print-datapoints/fig11-failure.py # print the data points
+plot-datapoints/fig11-failure.py # plot as pdf in output-plots/
 ```
 
 #### Figure 12
 
 ```sh
-experiments/fig12-metadata-buffers.sh # run the experiment
+experiments/fig12-single-key.sh # run the experiment
 ./gather-logs.sh # retrieve the logs from the workers to the gateway
-print-datapoints/fig12-metadata-buffers.py # print the data points
-plot-datapoints/fig12-metadata-buffers.py # plot as pdf in output-plots/
+print-datapoints/fig12-single-key.py # print the data points
+plot-datapoints/fig12-single-key.py # plot as pdf in output-plots/
+```
+
+#### Figure 13
+
+```sh
+experiments/fig13-metadata-buffers.sh # run the experiment
+./gather-logs.sh # retrieve the logs from the workers to the gateway
+print-datapoints/fig13-metadata-buffers.py # print the data points
+plot-datapoints/fig13-metadata-buffers.py # plot as pdf in output-plots/
 ```
 
 # Navigating the code

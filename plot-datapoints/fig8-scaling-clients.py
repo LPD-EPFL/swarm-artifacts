@@ -99,7 +99,7 @@ for i, a in enumerate(outstandings):
                 # print(f'{workload}/a{a}/{s}-c{cc}: ', end="")
                 for c in range(1, cc + 1):
                     path = os.path.join("logs",
-                        f'fig7-scaling-clients/workload-{workload}/{a}parallelOps/{s}/{cc}clients/client{c}.txt',
+                        f'fig8-scaling-clients/workload-{workload}/{a}parallelOps/{s}/{cc}clients/client{c}.txt',
                     )
                     # print(path)
                     data = parse(path)
@@ -173,4 +173,4 @@ leg = fig.legend(handles=legends2, bbox_to_anchor=(0.57,1.15,0.30,0.015),
 
 # print(leg.get_bbox_to_anchor())
 
-plt.savefig("output-plots/fig7-scaling-clients.pdf", format='pdf', bbox_inches = 'tight', pad_inches=0.01)
+plt.savefig("output-plots/fig8-scaling-clients.pdf", format='pdf', bbox_inches = 'tight', pad_inches=0.01)

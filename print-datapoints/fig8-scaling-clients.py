@@ -20,7 +20,7 @@ for p, pname  in zip([1, 4], ["sequential", "4 parallel operations"]):
             tputavg = 0
             for c in range(1, cc+1):
                 path = os.path.join('logs',
-                    f'fig7-scaling-clients/{workload}/{p}parallelOps/{s}/{cc}clients/client{c}.txt',
+                    f'fig8-scaling-clients/{workload}/{p}parallelOps/{s}/{cc}clients/client{c}.txt',
                 )
                 data = parse(path)
                 getavg += data['GET']['psum'] / (cc * data['GET']['pcount'])

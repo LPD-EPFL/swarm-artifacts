@@ -10,7 +10,7 @@ workload = "workload-A"
 deathpoint = 6500000000 if workload == "workload-A" else 5000000000
 
 path = os.path.join('logs',
-    f'fig10-failure/{workload}/crash/client1.txt',
+    f'fig11-failure/{workload}/crash/client1.txt',
 )
 data = parse(path)
 grain = 20

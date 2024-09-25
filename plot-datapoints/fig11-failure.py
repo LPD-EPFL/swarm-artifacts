@@ -87,7 +87,7 @@ for wid in [0]:
 
     for s in schemes:
         path = os.path.join("logs",
-            f'fig10-failure/workload-{workload}/crash/client1.txt',
+            f'fig11-failure/workload-{workload}/crash/client1.txt',
         )
         data = parse(path)
         for col in [0,1]:
@@ -199,4 +199,4 @@ for wid in [0]:
 
     # print(leg.get_bbox_to_anchor())
 
-    plt.savefig(f'output-plots/fig10-failure.pdf', format='pdf', bbox_inches = 'tight', pad_inches=0.01)
+    plt.savefig(f'output-plots/fig11-failure.pdf', format='pdf', bbox_inches = 'tight', pad_inches=0.01)

@@ -88,7 +88,7 @@ for i, app in enumerate(apps):
                 tputavg = 0
                 for c in range(1,5):
                     path = os.path.join("logs",
-                        f'fig8-value-sizes/workload-{workload}/SWARM-KV/{s}/values-of-{sz}B/client{c}.txt',
+                        f'fig9-value-sizes/workload-{workload}/SWARM-KV/{s}/values-of-{sz}B/client{c}.txt',
                     )
                     # print(path)
                     data = parse(path)
@@ -163,4 +163,4 @@ leg = fig.legend(handles=legends2, bbox_to_anchor=(0.56,1.15,0.30,0.015),
 
 # print(leg.get_bbox_to_anchor())
 
-plt.savefig("output-plots/fig8-value-sizes.pdf", format='pdf', bbox_inches = 'tight', pad_inches=0.01)
+plt.savefig("output-plots/fig9-value-sizes.pdf", format='pdf', bbox_inches = 'tight', pad_inches=0.01)
