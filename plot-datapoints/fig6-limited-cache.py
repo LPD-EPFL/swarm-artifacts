@@ -95,9 +95,10 @@ for workload in ["B"]:
     subplots[0].set_xlabel('Latency (µs)', labelpad=1)
     subplots[1].set_xlabel('Latency (µs)', labelpad=1)
 
-    leg = fig.legend(handles=legends, bbox_to_anchor=(0.05,0.975,0.90,0.015),
-        loc='center', edgecolor='black', borderaxespad=0, ncols=4,
-        borderpad=.3, labelspacing=0.1, mode='expand', handletextpad=0.5
-        )
+    # Legend not included because it is the same as fig5. Uncomment to add the legend back.
+    # leg = fig.legend(handles=legends, bbox_to_anchor=(0.05,0.975,0.90,0.015),
+    #     loc='center', edgecolor='black', borderaxespad=0, ncols=4,
+    #     borderpad=.3, labelspacing=0.1, mode='expand', handletextpad=0.5
+    #     )
 
     plt.savefig(f'output-plots/fig6-limited-cache.pdf', format='pdf', bbox_inches = 'tight', pad_inches=0.01)
